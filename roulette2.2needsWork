@@ -1,0 +1,29 @@
+import math
+import random as rn
+
+
+while True:
+    entry_msg = input('press q for play or any other key to exit :')
+    ext_msg = 'q'
+    while entry_msg==ext_msg:
+        print('place your bet and wait')
+        y = int(input('the number you chose is: '))
+        x = rn.randint(0,36)
+        if x==0:
+            print('the number is 0')
+        elif (1<x<10) or (19<x<28):
+            if x%2==0:
+                print('the number',x,'is red')
+            else:
+                print('the number',x,'is black')
+        else:
+            if x%2==0:
+                print('the number',x,'is black')
+            else:
+                print('the number',x,'is red')
+        if x==y:
+            print("you won")
+        else:
+            ext_msg = input('you lose. If you want to play again press q,otherwise press any other key: ')
+    if entry_msg != ext_msg:
+        break
